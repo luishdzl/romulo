@@ -35,6 +35,7 @@ class PostRequest extends FormRequest
             'name' => 'required',
             'slug' => 'required|unique:posts,slug,' . ($post ? $post->id : 'NULL'),
             'status' => 'required|in:1,2',
+            'image' => 'required',
         ];
         if($this->status == 2){
             $rules = array_merge($rules, [
@@ -42,6 +43,7 @@ class PostRequest extends FormRequest
                 'tags' => 'required',
                 'extract' => 'required',
                 'body' => 'required',
+
             ]);
 
 

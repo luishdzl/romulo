@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use function Laravel\Prompts\table;
+
 return new class extends Migration
 {
     /**
@@ -17,11 +19,9 @@ return new class extends Migration
             $table->string('slug');
             $table->text('extract')->nullable();
             $table->longText('body')->nullable();
-            $table->string('image')->nullable(); // Make image nullable
-            $table->integer('amount')->default(0); // Correct method name to integer
-            $table->enum('use', [1, 2])->default(1);
-            $table->enum('status', [1, 2])->default(1);
-
+            $table->string('image',80)->nullable(); // Make image nullable
+             // Correct method name to integer
+            $table->enum('status', [1, 2])->default(1);       
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
 

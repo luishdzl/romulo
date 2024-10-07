@@ -15,6 +15,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
+            'cedula' => $this->faker->numberBetween(1, 59999999), // max 8 digits,
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => Hash::make('password'), // contraseña por defecto

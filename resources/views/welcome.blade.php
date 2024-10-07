@@ -3,37 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Bienvenido</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <section id="inicio">
-    <div class="container d-flex align-items-center justify-content-center min-vh-100"><div class="row"> 
-        <div class="col-2"><img src="/imagenes/1.gif" alt="imgbar"></div> 
-        <div class="col-8">
+    <div class="container d-flex justify-content-center min-vh-100">
+      <div class="row"> 
+        <div class="col-12 d-flex justify-content-center align-items-center ">
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
-            <h1 class="fw-bold">Rómulos<br>Gallegos</h1></div>
+            <h1 style=" font-size: 6rem" class="fw-bold">Rómulos<br>Gallegos</h1></div>
+            <div class="col" style="height: 20%vh;"></div>
             <div id="romulo" class="col-12 d-flex justify-content-center">
-            <div class="body" style="width: 100%;">
-                <img class="card-img-top p-4" src="imagenes/tallermec.gif" alt="Card image cap">
-                <div class="card-body">
-                  <h3 id="tm">Taller de<br>mecánica</h3>
-                </div>
-              </div>
-              <div  class="body" style="width: 100%;">
-                <img class="card-img-top p-4" src="imagenes/tallerele.svg" alt="Card image cap">
-                <div class="card-body">
-                    <h3 id="te">Taller de<br>electricidad</h3>
-                </div>
-              </div>
-              <div  class="body" style="width: 100%;">
-                <img class="card-img-top p-4" src="imagenes/tallercarp.svg" alt="Card image cap">
-                <div class="card-body">
-                    <h3 id="tc">Taller de<br>carpintería</h3>
-                </div>
-              </div>
-            </div>
             <div id="butonir" class="col-12 d-flex justify-content-center my-3">
                 <div class="ir">
                   @if (Route::has('login'))
@@ -41,9 +23,9 @@
                       @auth
                           <a
                               href="{{ url('/dashboard') }}"
-                              class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                              class="btn btn-primary rounded-md px-3 py-3 mx-auto text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                           >
-                              Dashboard
+                              Menu principal
                           </a>
                       @else
                           <a
@@ -67,12 +49,14 @@
             </div>
             </div>
         </div> 
-        <div class="col-2 align-self-end"><img src="/imagenes/2.gif" alt="imgbar"></div> 
     </div>
+    <div class="col-12 d-flex align-items-center justify-content-center"><a style=" text-decoration: none;" href="#history"><h3 >(flecha hacia abajo)</h3></a></div>
   </div>
+
     </section>
     <section id="shistoria">
-        <div class="container d-flex align-items-center justify-content-center p-5 min-vh-100"><div class="row"> 
+        <div id="history" class="container d-flex align-items-center justify-content-center p-5 min-vh-100">
+          <div class="row"> 
             <div class="col-lg-6 d-flex align-items-center justify-content-center">
                 <div class="row">
                     <div class="col-12 d-flex align-items-center justify-content-center"><h3>Nuestra historia</h3></div>

@@ -11,6 +11,9 @@ use App\Http\Controllers\Admin\HerramientaController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\InventoryController;
+use App\Http\Controllers\Admin\CargoController;
+use App\Http\Controllers\TiposController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -45,10 +48,17 @@ Route::resource('herramientas', HerramientaController::class)
     ->middleware(['can:admin.herramientas.index', 'can:admin.herramientas.create', 'can:admin.herramientas.edit', 'can:admin.herramientas.destroy'])
     ->names('admin.herramientas');
 
-Route::resource('inventories', InventoryController::class)->names('admin.inventories');
+Route::resource('inventories', InventoryController::class)
+    ->middleware(['can:admin.inventories.index', 'can:admin.inventories.create', 'can:admin.inventories.edit', 'can:admin.inventories.destroy'])
+    ->names('admin.inventories');
+
+Route::resource('cargos', CargoController::class)
+    ->middleware(['can:admin.cargos.index', 'can:admin.cargos.create', 'can:admin.cargos.edit', 'can:admin.cargos.destroy'])
+    ->names('admin.cargos');
 
 // Rutas para los modelos de usuario
 Route::get('tag/{tag}', [PostController::class, 'tag'])->name('posts.tag');
 Route::get('category/{category}', [PostController::class, 'category'])->name('posts.category');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::get('/posts', [PostController::class, 'post'])->name('posts');
+Route::get('/tipos', [TiposController::class, 'tipos'])->name('tipos');

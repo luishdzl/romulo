@@ -12,8 +12,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Cantidad</th>
-                    <th>Estado</th>
+                    <th>Imagen</th>
                     <th colspan="2"></th>
                 </tr>
             </thead>
@@ -22,17 +21,8 @@
                 <tr>
                     <td>{{$post->id}}</td>
                     <td>{{$post->name}}</td>
-                    <td> <img class="img-fluid" src="/storage/{{$post->image}}" alt=""></td>
-                    <td>{{$post->amount}}</td>
-                    <td>
-                        @if($post->use == 1)
-                            funcional
-                        @elseif($post->use == 2)
-                            averiado
-                        @else
-                            Desconocido
-                        @endif
-                    </td>
+                    <td> <img class="img-fluid" src="/storage/{{$post->image}}" alt="img"></td>
+
                     <td width="10px"><a class="btn btn-warning" href="{{route('admin.herramientas.edit', $post)}}">Editar</a></td>
                     <td width="10px">
                         <form action="{{route('admin.herramientas.destroy', $post)}}" method="POST">

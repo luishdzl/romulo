@@ -316,7 +316,7 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'Menu del usuario',
+            'text' => 'Volver al menu Principal',
             'route' => 'dashboard',
             'icon' => 'fas fa-tachometer-alt fa-fw',
         ],
@@ -326,11 +326,19 @@ return [
             'icon' => 'fas fa-tachometer-alt fa-fw',
             'can'  => 'admin.home'
         ],
-        ['header' => 'INVENTARIO',],
+        ['header' => 'Control de Talleres',
+        'can'  => 'admin.inventories.index',],
+        [
+            'text' => 'Cargos de talleres',
+            'route' => 'admin.cargos.index',
+            'icon' => 'fab fa-fw fa-buffer',
+            'can'  => 'admin.cargos.index'
+        ],
         [
             'text' => 'Incorporacion de Herramientas',
             'route' => 'admin.inventories.index',
-            'icon' => 'fab fa-fw fa-buffer'
+            'icon' => 'fab fa-fw fa-buffer',
+            'can'  => 'admin.inventories.index'
         ],
 
         ['header' => 'ADMINISTRAR USUARIOS',

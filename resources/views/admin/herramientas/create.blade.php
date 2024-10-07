@@ -9,7 +9,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('admin.herramientas.store') }}" method="POST">
+        <form action="{{ route('admin.herramientas.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <!--
 
@@ -90,6 +90,15 @@
                 Publicado
             </label>
         </div>
+
+        <div class="form-group">
+            <label for="image">Imagen</label>
+            <input type="file" accept="image/*" class="form-control" id="image" name="image" value="{{ old('image') }}">
+            @error('image')
+            <span class="text-danger">{{$message}}</span>
+        @enderror
+    </div>
+
         <div class="form-group">
             <label for="extract">Extracto:</label>
             <textarea name="extract" id="extract" class="form-control">{{ old('extract', isset($post) ? $post->extract : '') }}</textarea>

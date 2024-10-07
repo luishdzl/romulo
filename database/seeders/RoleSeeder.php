@@ -34,6 +34,16 @@ class RoleSeeder extends Seeder
       Permission::create(['name' => 'admin.tags.edit'])->syncRoles([$role1, $role2]);
       Permission::create(['name' => 'admin.tags.destroy'])->syncRoles([$role1, $role2]);
 
+      Permission::create(['name' => 'admin.cargos.index'])->syncRoles([$role1, $role2]);
+      Permission::create(['name' => 'admin.cargos.create'])->syncRoles([$role1, $role2]);
+      Permission::create(['name' => 'admin.cargos.edit'])->syncRoles([$role1, $role2]);
+      Permission::create(['name' => 'admin.cargos.destroy'])->syncRoles([$role1, $role2]);
+
+      Permission::create(['name' => 'admin.inventories.index'])->syncRoles([$role1, $role2]);
+      Permission::create(['name' => 'admin.inventories.create'])->syncRoles([$role1, $role2]);
+      Permission::create(['name' => 'admin.inventories.edit'])->syncRoles([$role1, $role2]);
+      Permission::create(['name' => 'admin.inventories.destroy'])->syncRoles([$role1, $role2]);
+
       Permission::create(['name' => 'admin.herramientas.index'])->syncRoles([$role1, $role2, $role3]);
       Permission::create(['name' => 'admin.herramientas.create'])->syncRoles([$role1, $role2, $role3]);
       Permission::create(['name' => 'admin.herramientas.edit'])->syncRoles([$role1, $role2, $role3]);

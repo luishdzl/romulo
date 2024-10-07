@@ -22,8 +22,6 @@ class PostFactory extends Factory
             'extract' => $this->faker->paragraph,
             'body' => $this->faker->text,
             'image' => $this->faker->imageUrl(),
-            'amount' => $this->faker->numberBetween(1, 100),
-            'use' => $this->faker->randomElement([1, 2]),
             'status' => $this->faker->randomElement([1, 2]),
             'user_id' => User::factory(),
             'category_id' => Category::factory(),

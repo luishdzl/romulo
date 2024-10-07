@@ -1,5 +1,6 @@
 <x-app-layout>
-<div class="container p-4">       
+<div class="container p-4">  
+  <h2 class="mx-auto p-3">Todas las herramientas</h2>     
  <div class="row">
   @foreach ($posts as $post)    
     <div class="col-sm-3 card m-4 p-2" style="width: 18rem;">

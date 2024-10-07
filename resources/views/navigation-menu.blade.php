@@ -4,7 +4,8 @@
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto my-2 justify-content-center mb-md-0">
           <li><a href="{{ route('dashboard')}}" class="nav-link px-2 link-secondary">Inicio</a></li>
-          <li><a href="{{ route('posts') }}" class="nav-link px-2 link-dark">Herramientas</a></li>
+          <li><a href="{{ route('tipos')}}" class="nav-link px-3 link-secondary">Tipos de herramienta</a></li>
+          <li><a href="{{ route('posts') }}" class="nav-link px-3 link-secondary">Todas las herramientas</a></li>
         </ul>
 
 

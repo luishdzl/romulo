@@ -58,7 +58,12 @@
             <x-input id="name" type="text" class="mt-1 block w-full" wire:model="state.name" required autocomplete="name" />
             <x-input-error for="name" class="mt-2" />
         </div>
-
+        <!-- Cedula -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="cedula" value="{{ __('Cedula ') }}" />
+            <x-input id="cedula" type="text" class="mt-1 block w-full" wire:model="state.cedula" required autocomplete="cedula" />
+            <x-input-error for="cedula" class="mt-2" />
+        </div>
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="email" value="{{ __('Correo') }}" />

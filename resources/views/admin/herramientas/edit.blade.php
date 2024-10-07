@@ -19,31 +19,6 @@
             @method('PUT')
             @csrf
 
-            <!-- Inventory Configuration Section -->
-            <div class="card">
-                <div class="card-body">
-                    <h4>Configuración de inventario</h4>
-                    <div class="form-group">
-                        <label for="amount">Cantidad</label>
-                        <input placeholder="Ingrese la cantidad" type="number" class="form-control" id="amount" name="amount" value="{{ old('amount', $herramienta->amount) }}">
-                        @error('amount')
-                        <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label for="use">Estado de la herramienta</label>
-                        <select name="use" id="use" class="form-control">
-                            <option value="1" {{ old('use', $herramienta->use) == 1 ? 'selected' : '' }}>Operativo</option>
-                            <option value="2" {{ old('use', $herramienta->use) == 2 ? 'selected' : '' }}>Averiado</option>
-                        </select>
-                        @error('use')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-            </div>
-
             <!-- Hidden User ID -->
             <div class="form-group">
                 <input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id }}">
@@ -106,6 +81,14 @@
                     Publicado
                 </label>
             </div>
+
+            <div class="form-group">
+                <label for="image">Imagen</label>
+                <input type="file" accept="image/*" class="form-control" id="image" name="image" value="{{ old('image') }}">
+                @error('image')
+                <span class="text-danger">{{$message}}</span>
+            @enderror
+        </div>
 
             <!-- Extract and Body Text Areas -->
             <div class="form-group">
